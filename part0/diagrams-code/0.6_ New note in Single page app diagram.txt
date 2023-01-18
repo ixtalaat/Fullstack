@@ -1,0 +1,15 @@
+title Add a new note (SPA)
+
+participant browser
+participant server
+
+activate browser
+activate server
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: status code 201 {"message": "a new note"}
+
+deactivate browser
+deactivate server
+
+note over browser: the browser executes the event handler that creates a new note then\nrerenders a new note to display without reloading for page then\nsends the new note to the server
